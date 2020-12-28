@@ -25,9 +25,9 @@
         </div>
         <br>
         <?php
-            if(isset($_POST)){
-                echo "test ".$_POST['searchbar'];
-            }
+            if(isset($_POST['submit'])){
+                echo 'Hello World';
+            } 
         ?>
         <code id="response" class="container"></code>
     </body>
