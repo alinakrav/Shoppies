@@ -1,6 +1,6 @@
 function search() { 
     let s = searchbar.value;
-    let url = "http://omdbapi.com/?s=" + s + "&apikey=d4c7f15a";
+    let url = "https://omdbapi.com/?s=" + s + "&apikey=d4c7f15a";
     let request = new XMLHttpRequest();
     request.open('GET', url);
     request.responseType = 'json';
