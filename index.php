@@ -25,7 +25,7 @@
         </div>
         <br>
         <?php
-            if(isset($_POST['submit'])){
+            if(isset($_POST['searchbar'])){
                 echo '<script>alert("submit php")</script>';
             } 
             else {
