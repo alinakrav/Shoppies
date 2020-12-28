@@ -25,9 +25,10 @@
         </div>
         <br>
         <?php
+            echo "hello";
             function display()
             {
-                echo "hello ".$_POST["studentname"];
+                echo "hello ".$_POST["searchbar"];
             }
             if(isset($_POST['submit']))
             {
