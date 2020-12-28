@@ -10,7 +10,7 @@
         <div class="container">
             <form name="searchform" onsubmit="search(); return false;">
                 <label for="searchbar">search</label>
-                <input type="text" id="searchbar" placeholder="search...">
+                <input type="text" name="searchbar" placeholder="search...">
             </form>
         </div>
         <br>
@@ -25,15 +25,9 @@
         </div>
         <br>
         <?php
-            echo "hello";
-            function display()
-            {
-                echo "hello ".$_POST["searchbar"];
+            if(isset($_POST)){
+                echo "hello ".$_POST['searchbar'];
             }
-            if(isset($_POST['submit']))
-            {
-                display();
-            } 
         ?>
         <code id="response" class="container"></code>
     </body>
