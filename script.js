@@ -11,7 +11,6 @@ function search() {
         // input.placeholder = resp.Search[0].Title;
     }
     request.send();
-    return false;
 }
 
 function show_results(resp) {

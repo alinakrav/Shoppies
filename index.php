@@ -8,7 +8,7 @@
         <h1>The Shoppies</h1>
 
         <div class="container">
-            <form id="searchform" method="post" action="index.php" onsubmit="search();">
+            <form id="searchform" method="post" action="" onsubmit="search(); return false;">
                 <label for="searchbar">search</label>
                 <input type="text" id="searchbar" placeholder="search...">
             </form>
