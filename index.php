@@ -28,6 +28,9 @@
             if(isset($_POST['submit'])){
                 echo '<script>alert("submit php")</script>';
             } 
+            else {
+                echo "didnt work";
+            }
         ?>
         <code id="response" class="container"></code>
     </body>
