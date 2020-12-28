@@ -29,7 +29,7 @@
                 echo '<script>alert("submit php")</script>';
             } 
             else {
-                echo "didnt work";
+                echo '<script>alert("didnt submit")</script>';
             }
         ?>
         <code id="response" class="container"></code>
