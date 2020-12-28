@@ -25,6 +25,7 @@
         </div>
         <br>
         <?php
+            echo "hello";
             function display()
             {
                 echo "hello ".$_POST["studentname"];
