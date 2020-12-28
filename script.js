@@ -14,6 +14,7 @@ function search() {
 }
 
 function show_results(resp) {
+    ul.append("<li>hello</li>");
     document.getElementById("response").innerHTML = JSON.stringify(resp);
 
 }
