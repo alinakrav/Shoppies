@@ -8,15 +8,16 @@
         <h1>The Shoppies</h1>
 
         <div class="container">
-            <form id="searchform" method="post" action="" onsubmit="search(); return false;">
+            <!-- update results while typing, ignore enter key -->
+            <form id="searchform" onkeyup="search()" onsubmit="return false">
                 <label for="searchbar">search</label>
                 <input type="text" id="searchbar" placeholder="search...">
             </form>
         </div>
         <br>
         <div class="container">
-            nominations
-            <button>nominate</button>
+            <ul id='nominations'>Nominations
+            </ul>
         </div>
         <br>
         <div class="container">
@@ -24,15 +25,7 @@
             <button>remove</button>
         </div>
         <br>
-        <ul id='list'></ul>
-        <?php
-            if(isset($_POST['submit'])){
-                echo '<script>alert("submit php")</script>';
-            } 
-            else {
-                // echo '<script>alert("didnt submit")</script>';
-            }
-        ?>
+        <ul id='results'></ul>
         <code id="response" class="container"></code>
     </body>
 </html>
