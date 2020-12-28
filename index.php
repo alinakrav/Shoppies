@@ -8,9 +8,9 @@
         <h1>The Shoppies</h1>
 
         <div class="container">
-            <form name="searchform" onsubmit="search(); return false;">
+            <form id="searchform" onsubmit="search(); return false;">
                 <label for="searchbar">search</label>
-                <input type="text" name="searchbar" placeholder="search...">
+                <input type="text" id="searchbar" placeholder="search...">
             </form>
         </div>
         <br>
