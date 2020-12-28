@@ -26,7 +26,7 @@
         <br>
         <?php
             if(isset($_POST)){
-                echo "hello ".$_POST['searchbar'];
+                echo "test ".$_POST['searchbar'];
             }
         ?>
         <code id="response" class="container"></code>
