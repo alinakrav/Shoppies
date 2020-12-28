@@ -25,11 +25,11 @@
         </div>
         <br>
         <?php
-            if(isset($_POST['searchbar'])){
+            if(isset($_POST['submit'])){
                 echo '<script>alert("submit php")</script>';
             } 
             else {
-                echo '<script>alert("didnt submit")</script>';
+                // echo '<script>alert("didnt submit")</script>';
             }
         ?>
         <code id="response" class="container"></code>
