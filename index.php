@@ -26,7 +26,7 @@
         <br>
         <?php
             if(isset($_POST['submit'])){
-                echo 'Hello World';
+                echo '<script>alert("submit php")</script>';
             } 
         ?>
         <code id="response" class="container"></code>
