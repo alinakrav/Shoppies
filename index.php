@@ -24,7 +24,7 @@
             <button>remove</button>
         </div>
         <br>
-        <ul name='list'></ul>
+        <ul id='list'></ul>
         <?php
             if(isset($_POST['submit'])){
                 echo '<script>alert("submit php")</script>';
