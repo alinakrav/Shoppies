@@ -1,3 +1,7 @@
+// keep track of nominated movies
+const nomMovies = [];
+var canNominate = true;
+
 function search() { 
     let s = searchbar.value;
     // display string in results div
@@ -20,31 +24,52 @@ function show_results(resp) {
     for (let i = 0; i < j; i++) {
         // if wrong index, continue to the next one
         try {
-            let movie = resp.Search[i]
+            let movie = resp.Search[i];
             if (movie.Type != 'movie') 
                 j++;
-            else
+            else {
+                let movieStr = movie.Title + ' (' + movie.Year + ')';
                 // list elements will be id'd as their i index when nominated
-                results.innerHTML += '<li><a id="' + i + '"> ' + movie.Title + ' (' + movie.Year + ') </a><button class="nominate_btn" onclick="nominate(' + i + ')">Nominate</button></li>';
+                results.innerHTML += '<li><a id="' + i + '"> ' + movieStr + ' </a><button id="btn' + i + '" class="nominate_btn" onclick="nominate(\'' + movieStr + '\', this)">Nominate</button></li>';
+                // prevent adding duplicates (after a new search)
+                if (nominations.innerHTML != '' && nomMovies.includes(movieStr))
+                    document.getElementById(i).parentNode.children[1].disabled = true;
+            }
         } finally { continue; }
     }
 }
 
-function nominate(id) {
-    let elem = document.getElementById(id);
-    // delete li element on button click
-    nominations.innerHTML += '<li>' + elem.innerText + ' <button onclick="remove(this, ' + id + ')">Remove</button></li>';
-    // disable button when nominated
-    elem.parentNode.children[1].disabled = true;
+function nominate(movieStr, btn) {
+    if (canNominate) {
+        nomMovies.push(movieStr);
+        // delete li element on button click
+        nominations.innerHTML += '<li>' + movieStr + ' <button onclick="remove(this, \'' + btn.id + '\')">Remove</button></li>';
+        // disable button when nominated
+        btn.disabled = true;
 
-    // display banner when 5 nominated
-    if (nominations.children.length == 5)
-        console.log('banner: 5 nominated');
+        // display banner when 5 nominated
+        if (nomMovies.length == 5) {
+            nominationsLabel.innerHTML = '<span style="color:rgb(231, 105, 130)">Your 5 nominations are selected!</span>';
+            canNominate = false;
+        }
+    }
 }
 
-function remove(elem, id) {
+function remove(elem, btnID) {
+    // once a movie is removed, nominations are < 5
+    if (nomMovies.length == 5) {
+        canNominate = true;
+        // revert normal label
+        nominationsLabel.innerHTML = 'Nominations';
+    }
     // remove item from results
     elem.parentNode.outerHTML = '';
-    // enable button again
-    document.getElementById(id).parentNode.children[1].disabled = false;
+    // don't disable button if results are gone
+    let btn;
+    if (btn = document.getElementById(btnID)) {
+        // enable button again
+        btn.disabled = false;
+    }
+    // remove movie from nominations list
+    nomMovies.splice(nomMovies.indexOf(elem.parentNode.innerText), 1);
 }

@@ -10,19 +10,19 @@
 
         <div class="container">
             <!-- update results while typing, ignore enter key -->
-            <label for="searchform">Movie Title</label>
+            <h4 for="searchform">Movie Title</h4>
             <form id="searchform" onkeyup="search()" onsubmit="return false">
                 <input type="text" id="searchbar" placeholder="Search">
             </form>
         </div>
         <div class="flex-box">
             <div class="container inline">
-                <a id="searchLabel">Results for ""</a>
+                <h3 id="searchLabel">Results</h3>
                 <ul id="results"></ul>
             </div>
             
             <div class="container inline">
-                Nominations
+                <h3 id="nominationsLabel">Nominations</h3>
                 <ul id="nominations"></ul>
             </div>
         </div>
