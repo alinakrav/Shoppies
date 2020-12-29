@@ -5,7 +5,10 @@ var canNominate = true;
 function search() { 
     let s = searchbar.value;
     // display string in results div
-    searchLabel.innerText = 'Results for "' + s + '"';
+    if (s == '')
+        searchLabel.innerText = 'Results';
+    else
+        searchLabel.innerText = 'Results for "' + s + '"';
     let url = 'https://omdbapi.com/?s=' + s + '&apikey=d4c7f15a';
     let request = new XMLHttpRequest();
     request.open('GET', url);
