@@ -1,3 +1,7 @@
+body {
+    overflow-y: scroll; /* always show horizontal scrollbar to avoid width changes */
+}
+  
 html *
 {
    font-family: Helvetica, Arial, sans-serif;
