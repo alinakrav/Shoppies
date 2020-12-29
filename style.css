@@ -1,7 +1,38 @@
 body {
-    background-color: rgb(255, 241, 115);
+    background-color: rgb(242, 246, 250);
+    margin: 100px 100px 100px 100px;
 }
 
 .container {
     background-color: white;
+    padding: 15px 15px 15px 15px;
+    margin: 10px 10px 10px 10px;
+}
+
+.inline {
+    width: 50%;
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: row;
+}
+
+#searchform:before {
+    font-family: FontAwesome;
+    content: "\f002";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+#searchform {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+#searchbar {
+    padding: 8px 8px 8px 25px;
+    width: 100%;
 }

@@ -1,6 +1,8 @@
 function search() { 
     let s = searchbar.value;
-    let url = "https://omdbapi.com/?s=" + s + "&apikey=d4c7f15a";
+    // display string in results div
+    searchLabel.innerText = 'Results for "' + s + '"';
+    let url = 'https://omdbapi.com/?s=' + s + '&apikey=d4c7f15a';
     let request = new XMLHttpRequest();
     request.open('GET', url);
     request.responseType = 'json';
@@ -14,20 +16,18 @@ function search() {
 function show_results(resp) {
     // erase old results
     results.innerHTML = '';
-    let j = 5;
+    let j = 10;
     for (let i = 0; i < j; i++) {
         // if wrong index, continue to the next one
         try {
             let movie = resp.Search[i]
-            if (movie.Type != "movie") 
+            if (movie.Type != 'movie') 
                 j++;
             else
                 // list elements will be id'd as their i index when nominated
                 results.innerHTML += '<li><a id="' + i + '"> ' + movie.Title + ' (' + movie.Year + ') </a><button class="nominate_btn" onclick="nominate(' + i + ')">Nominate</button></li>';
         } finally { continue; }
     }
-
-    document.getElementById("response").innerHTML = JSON.stringify(resp);
 }
 
 function nominate(id) {
