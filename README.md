@@ -1,6 +1,6 @@
 # ShopifyChallenge
 
-Go to https://alinakrav.github.io/ShopifyChallenge to see it in action :)
+Go to https://alinakrav.github.io/Shoppies to see it in action :)
 
 ### Details you may have missed
 * If you search for a movie, nominate it, then search for something else and come back to it, the Nominate function is still disabled because that would be a duplicate (this is easy to overlook but I caught it and ensured it works perfectly)
