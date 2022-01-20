@@ -1,4 +1,4 @@
-# ShopifyChallenge
+# ShopifyChallenge: The Shoppies
 
 Go to https://alinakrav.github.io/Shoppies to see it in action :)
 
